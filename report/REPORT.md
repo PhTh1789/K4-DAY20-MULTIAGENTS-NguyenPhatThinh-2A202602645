@@ -1,12 +1,10 @@
 # Báo cáo Lab: Self evolving Agentic
 
-> Sao chép tệp này thành `report/REPORT.md` (đã làm ở Phần 0) và điền dần qua các Phần của lab. Xóa các dòng hướng dẫn dạng trích dẫn (bắt đầu bằng `>`). Văn phong kỹ thuật, ngắn gọn, mọi nhận định đi kèm số liệu hoặc bằng chứng. Trong buổi học: điền mục 1 đến 7 (bản nháp). Sau buổi học: hoàn thiện mục 8 đến 10.
-
 ## 1. Thông tin nhóm và cấu hình
 
 | Họ tên            | Mã sinh viên | Phần đóng góp |
 | ----------------- | ------------ | ------------- |
-| Nguyễn Phát Thịnh | 2A292602645  | Toàn bộ       |
+| Nguyễn Phát Thịnh | 2A202602645  | Toàn bộ       |
 
 - Mô hình (tên deployment hoặc `LAB_MODEL`), nhiệt độ (`LAB_TEMPERATURE`), `recursion_limit`: `gpt-6-luna` (qua OpenAI official API), nhiệt độ `1`, `recursion_limit = 60`
 - Phiên bản Deep Agents (`pip show deepagents`), hệ điều hành, chạy trực tiếp hay trong Docker: Deep Agents `0.7.21`, Windows (chạy trực tiếp trong môi trường ảo `.venv`)
