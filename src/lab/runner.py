@@ -100,16 +100,19 @@ def run_task(task_id: str, condition: str, results_dir="results", model=None, re
         t0 = time.time()
 
         try:
-            result = agent.invoke(
+            for chunk in agent.stream(
                 {"messages": [{"role": "user", "content": task.instruction}]},
                 config={"callbacks": [usage], "recursion_limit": recursion_limit},
-            )
-            messages = result.get("messages", [])
-            final_message = messages[-1].content if messages else ""
+                stream_mode="values",
+            ):
+                if "messages" in chunk:
+                    messages = chunk["messages"]
+            if messages:
+                final_message = messages[-1].content
         except Exception as exc:
             record["error"] = f"{type(exc).__name__}: {exc}"
-            messages = []
-            final_message = ""
+            if messages:
+                final_message = messages[-1].content
 
         record["seconds"] = round(time.time() - t0, 1)
 
